@@ -6,15 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css" />
+  <style>
+    /* Cambia el color de las letras */
+    body {
+      color: #333;
+    }
+
+    /* Agrega una imagen de fondo a la sección "Design Block" */
+    section.bg-light {
+      background-image: url('https://image.flaticon.com/icons/png/128/1001/1001196.png');
+      background-size: cover;
+      background-position: center center;
+      min-height: 100vh;
+    }
+
+    /* Centra el contenido de la sección "Jumbotron" */
+    .jumbotron {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+  </style>
 </head>
 <body>
   <!-- Section: Design Block -->
   <section class="bg-light">
     <!-- Jumbotron -->
-    <div class="jumbotron jumbotron-fluid py-5">
+    <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 mb-5 mb-lg-0">
+            <img src="https://image.flaticon.com/icons/png/128/1001/1001196.png" alt="Pharmacy Icon">
+            <h1 class="display-3 fw-bold mb-3">
             <h1 class="display-3 fw-bold mb-3" style="color: #ff6b6b;">
               <span class="text-primary">MYMED</span> <br />
               Venta y gestión de medicamentos
