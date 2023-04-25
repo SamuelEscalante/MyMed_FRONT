@@ -62,7 +62,7 @@ navigation">
                 $long = count($resp);                
                 for ($i = 0; $i < $long; $i++) {
                     $dec = $resp[$i];
-                    echo $dec;
+                    print_r($dec);
                     $id = $dec->id;
                     $totalCuenta = $dec->totalCuenta;
                     $fechaCompra = $dec->FechaCompra;
