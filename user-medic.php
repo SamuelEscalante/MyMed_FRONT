@@ -66,9 +66,33 @@ navigation">
             if (is_object($resp)) {
                 $long = count((array)$resp);
                 foreach (get_object_vars($resp) as $key => $value) {
-                    echo "$key";
-                    echo gettype($value->record);
-                    echo "------";
+                    echo "-----a-";
+                    $long = count($value->record);
+                    
+                    for ($i = 0; $i < $long; $i++) {
+                        $dec = $value->record[$i];
+                        $id = $dec->id;
+                        $usuario = $dec->usuario;
+                        $medicamento_nombre = $dec->medicamentoNombre;
+                        $cantidad = $dec->cantidad;
+                        $precio_total = $dec->precioTotal;
+                        $medicamento_id = $dec->medicamentoId;
+                        $compra_id = $dec->comprasId;
+                        $totalCuenta = $dec->totalCuenta;
+                        $fechaCompra = $dec->FechaCompra;
+
+                        ?>
+                            <tr>
+                                <td><?php echo $usuario; ?></td>
+                                <td><?php echo $medicamento_id; ?></td>
+                                <td><?php echo $medicamento_nombre; ?></td>
+                                <td>#<?php echo $cantidad; ?></td>
+                                <td>$<?php echo $precio_total; ?></td>
+                                <td>$<?php echo $totalCuenta; ?></td>
+                                <td><?php echo $fechaCompra; ?></td>
+                            </tr>
+                        <?php
+                    }
                 }
             }
             if (is_object($resp)) {
