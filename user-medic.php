@@ -65,9 +65,10 @@ navigation">
             echo "<script>console.log('$servurl');</script>";
             print_r($resp);
             echo gettype($resp);
-            if (is_object($resp)) {
-                $long = count($resp);   
-                echo $long;             
+            if (is_array($resp)) {
+                $long = count($resp);
+                echo $long;
+                echo "-----";
                 for ($i = 0; $i < $long; $i++) {
                     $dec = $resp[$i];
                     $id = $dec->id;
