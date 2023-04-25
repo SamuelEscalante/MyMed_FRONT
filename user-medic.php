@@ -66,6 +66,11 @@ navigation">
             print_r($resp);
             echo gettype($resp);
             if (is_object($resp)) {
+                echo "---objecto---";
+                echo count((array)$resp);
+                echo "---objecto---";
+            }
+            if (is_object($resp)) {
                 $long = count($resp);
                 echo $long;
                 echo "-----";
