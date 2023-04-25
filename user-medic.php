@@ -89,7 +89,7 @@ navigation">
                                     <td>#<?php echo $cantidad; ?></td>
                                     <td>$<?php echo $precio_total; ?></td>
                                     <td rowspan="<?php echo $value->len; ?>"><?php echo $totalCuenta; ?></td>
-                                    <td rowspan="<?php echo $value->le; ?>"><?php echo $fechaCompra; ?></td>
+                                    <td rowspan="<?php echo $value->len; ?>"><?php echo $fechaCompra; ?></td>
                                 </tr>
                             <?php
                         } else {
