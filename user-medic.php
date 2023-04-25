@@ -40,6 +40,11 @@ navigation">
         <table class="table">
         <thead>
             <tr>
+                <th scope="col">Usuario</th>
+                <th scope="col">ID Medicamento</th>
+                <th scope="col">Medicamento</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio Total</th>
                 <th scope="col">Total de Compra</th>
                 <th scope="col">Fecha de Compra</th>
 
@@ -64,11 +69,21 @@ navigation">
                     $dec = $resp[$i];
                     // print_r($dec);
                     $id = $dec->id;
+                    $usuario = $dec->usuario;
+                    $medicamento_nombre = $dec->medicamento_nombre;
+                    $cantidad = $dec->cantidad;
+                    $precio_total = $dec->precio_total;
+                    $medicamento_id = $dec->medicamento_id;
                     $totalCuenta = $dec->totalCuenta;
                     $fechaCompra = $dec->FechaCompra;
 
                 ?>
                     <tr>
+                        <td>$<?php echo $usuario; ?></td>
+                        <td>$<?php echo $medicamento_id; ?></td>
+                        <td>$<?php echo $medicamento_nombre; ?></td>
+                        <td>$<?php echo $cantidad; ?></td>
+                        <td>$<?php echo $precio_total; ?></td>
                         <td>$<?php echo $totalCuenta; ?></td>
                         <td><?php echo $fechaCompra; ?></td>
                     </tr>
