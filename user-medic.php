@@ -68,8 +68,12 @@ navigation">
                 foreach (get_object_vars($resp) as $key => $value) {
                     echo "$key";
                     // print_r($value);
-                    echo gettype($value);
-                    // foreach ()
+                    echo "------";
+                    foreach (get_object_vars($value) as $key => $value) {
+                        echo $key;
+                        print_r($value);
+                        echo "///";
+                    }
                 }
                 echo "---objecto---";
                 echo "---objecto---";
