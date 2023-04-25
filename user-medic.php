@@ -93,6 +93,14 @@ navigation">
                                 </tr>
                             <?php
                         } else {
+                            ?>
+                                <tr>
+                                    <td><?php echo $medicamento_id; ?></td>
+                                    <td><?php echo $medicamento_nombre; ?></td>
+                                    <td>#<?php echo $cantidad; ?></td>
+                                    <td>$<?php echo $precio_total; ?></td>
+                                </tr>
+                            <?php
 
                         }
                     }
