@@ -63,12 +63,13 @@ navigation">
             curl_close($curl);
             $resp = json_decode($response);
             echo "<script>console.log('$servurl');</script>";
-            echo gettype($resp);
             if (is_object($resp)) {
                 $long = count((array)$resp);
                 foreach (get_object_vars($resp) as $key => $value) {
                     echo "$key";
-                    print_r($value);
+                    // print_r($value);
+                    echo gettype($value);
+                    // foreach ()
                 }
                 echo "---objecto---";
                 echo "---objecto---";
