@@ -70,19 +70,19 @@ navigation">
                     // print_r($dec);
                     $id = $dec->id;
                     $usuario = $dec->usuario;
-                    $medicamento_nombre = $dec->medicamento_nombre;
+                    $medicamento_nombre = $dec->medicamentoNombre;
                     $cantidad = $dec->cantidad;
-                    $precio_total = $dec->precio_total;
-                    $medicamento_id = $dec->medicamento_id;
+                    $precio_total = $dec->precioTotal;
+                    $medicamento_id = $dec->medicamentoId;
                     $totalCuenta = $dec->totalCuenta;
                     $fechaCompra = $dec->FechaCompra;
 
                 ?>
                     <tr>
-                        <td>$<?php echo $usuario; ?></td>
-                        <td>$<?php echo $medicamento_id; ?></td>
-                        <td>$<?php echo $medicamento_nombre; ?></td>
-                        <td>$<?php echo $cantidad; ?></td>
+                        <td><?php echo $usuario; ?></td>
+                        <td><?php echo $medicamento_id; ?></td>
+                        <td><?php echo $medicamento_nombre; ?></td>
+                        <td>#<?php echo $cantidad; ?></td>
                         <td>$<?php echo $precio_total; ?></td>
                         <td>$<?php echo $totalCuenta; ?></td>
                         <td><?php echo $fechaCompra; ?></td>
