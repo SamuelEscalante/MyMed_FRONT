@@ -80,18 +80,21 @@ navigation">
                         $compra_id = $dec->comprasId;
                         $totalCuenta = $dec->totalCuenta;
                         $fechaCompra = $dec->FechaCompra;
+                        if ($i == 0) {
+                            ?>
+                                <tr>
+                                    <td rowspan="<?php echo $value->len; ?>"><?php echo $usuario; ?></td>
+                                    <td><?php echo $medicamento_id; ?></td>
+                                    <td><?php echo $medicamento_nombre; ?></td>
+                                    <td>#<?php echo $cantidad; ?></td>
+                                    <td>$<?php echo $precio_total; ?></td>
+                                    <td rowspan="<?php echo $value->len; ?>"><?php echo $totalCuenta; ?></td>
+                                    <td rowspan="<?php echo $value->le; ?>"><?php echo $fechaCompra; ?></td>
+                                </tr>
+                            <?php
+                        } else {
 
-                        ?>
-                            <tr>
-                                <td><?php echo $usuario; ?></td>
-                                <td><?php echo $medicamento_id; ?></td>
-                                <td><?php echo $medicamento_nombre; ?></td>
-                                <td>#<?php echo $cantidad; ?></td>
-                                <td>$<?php echo $precio_total; ?></td>
-                                <td>$<?php echo $totalCuenta; ?></td>
-                                <td><?php echo $fechaCompra; ?></td>
-                            </tr>
-                        <?php
+                        }
                     }
                 }
             }
