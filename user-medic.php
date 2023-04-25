@@ -63,17 +63,18 @@ navigation">
             curl_close($curl);
             $resp = json_decode($response);
             echo "<script>console.log('$servurl');</script>";
+            print_r($resp);
             if (is_array($resp)) {
                 $long = count($resp);                
                 for ($i = 0; $i < $long; $i++) {
                     $dec = $resp[$i];
-                    // print_r($dec);
                     $id = $dec->id;
                     $usuario = $dec->usuario;
                     $medicamento_nombre = $dec->medicamentoNombre;
                     $cantidad = $dec->cantidad;
                     $precio_total = $dec->precioTotal;
                     $medicamento_id = $dec->medicamentoId;
+                    $compra_id = $dec->comprasId;
                     $totalCuenta = $dec->totalCuenta;
                     $fechaCompra = $dec->FechaCompra;
 
