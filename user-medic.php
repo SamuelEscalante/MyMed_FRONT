@@ -59,9 +59,10 @@ navigation">
             $resp = json_decode($response);
             echo "<script>console.log('$servurl');</script>";
             if (is_array($resp)) {
-                $long = count($resp);
+                $long = count($resp);                
                 for ($i = 0; $i < $long; $i++) {
                     $dec = $resp[$i];
+                    echo $resp;
                     $id = $dec->id;
                     $totalCuenta = $dec->totalCuenta;
                     $fechaCompra = $dec->FechaCompra;
