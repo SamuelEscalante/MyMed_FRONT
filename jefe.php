@@ -48,54 +48,50 @@
             </div>
         </div>
     </nav>
-    <table class="table">
-    <div class="container">
-        <div class="row">
     <table class="table table-striped table-hover">
-    <thead>
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID_MEDICAMENTO</th>
+      <th scope="col">DESCRIPCIÓN</th>
+      <th scope="col">PRECIO UNITARIO</th>
+      <th scope="col">INVENTARIO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php
+      $servurl = "http://192.168.100.2:3002/medicamentos";
+      $curl = curl_init($servurl);
+
+      curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+      $response = curl_exec($curl);
+
+      if ($response === false) {
+          curl_close($curl);
+          die("Error en la conexion");
+      }
+
+      curl_close($curl);
+      $resp = json_decode($response);
+      $long = count($resp);
+      for ($i = 0; $i < $long; $i++) {
+          $dec = $resp[$i];
+          $ID_MEDICAMENTO = $dec->ID_MEDICAMENTO;
+          $DESCRIPCION = $dec->DESCRIPCION;
+          $PRECIO_UNITARIO = $dec->PRECIO_UNITARIO;
+          $INVENTARIO = $dec->INVENTARIO;
+    ?>
         <tr>
-        <th scope="col">ID_MEDICAMENTO</th>
-        <th scope="col">DESCRIPCION</th>
-        <th scope="col">PRECIO UNITARIO</th>
-        <th scope="col">INVENTARIO</th>
+          <td><?php echo $ID_MEDICAMENTO; ?></td>
+          <td><?php echo $DESCRIPCION; ?></td>
+          <td><?php echo "$" . number_format($PRECIO_UNITARIO, 2); ?></td>
+          <td><?php echo $INVENTARIO; ?></td>
         </tr>
-    </thead>
-        <tbody>
-            <?php
-            $servurl = "http://192.168.100.2:3002/medicamentos";
-            $curl = curl_init($servurl);
+    <?php
+      }
+    ?>
+  </tbody>
+</table>
 
-            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-            $response = curl_exec($curl);
-
-            if ($response === false) {
-                curl_close($curl);
-                die("Error en la conexion");
-            }
-
-            curl_close($curl);
-            $resp = json_decode($response);
-            $long = count($resp);
-            for ($i = 0; $i < $long; $i++) {
-                $dec = $resp[$i];
-                $ID_MEDICAMENTO = $dec->ID_MEDICAMENTO;
-                $DESCRIPCION = $dec->DESCRIPCION;
-                $PRECIO_UNITARIO = $dec->PRECIO_UNITARIO;
-                $INVENTARIO = $dec->INVENTARIO;
-            ?>
-                <tr>
-                    <td><?php echo $ID_MEDICAMENTO; ?></td>
-                    <td><?php echo $DESCRIPCION; ?></td>
-                    <td><?php echo $PRECIO_UNITARIO; ?></td>
-                    <td><?php echo $INVENTARIO; ?></td>
-                </tr>
-            <?php
-            }
-            ?>
-        </tbody>
-        </div>
-        </div>
-    </table>
 
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         AGREGAR MEDICAMENTO
