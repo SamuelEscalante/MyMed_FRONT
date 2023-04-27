@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MYMED - Venta y gestión de medicamentos</title>
+  <title>MYMED - Venta y gesti&oacute;n de medicamentos</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="statics/app.css">
 </head>
 <body>
   <!-- Section: Design Block -->
@@ -18,18 +18,20 @@
           <div class="col-lg-6 mb-5 mb-lg-0">
             <h1 class="display-3 fw-bold mb-3">
               <span class="text-primary">MYMED</span> <br />
-              Venta y gestión de medicamentos
+              Venta y gesti&oacute;n de medicamentos
             </h1>
             <p class="lead mb-5">
-              Aquí podrás comprar y gestionar tus medicamentos comprados.
+              Aqu&iacute; podr&aacute;s comprar y gestionar tus medicamentos comprados.
             </p>
-            <a href="#" class="btn btn-primary btn-lg">Ver más</a>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#integrantesModal">
+              Ver m&aacute;s
+            </button>
           </div>
           <div class="col-lg-6">
             <div class="card shadow-lg">
               <div class="card-body py-5 px-md-5">
                 <form action="ingresar.php" method="post">
-                  <h2 class="text-center mb-4">Inicia sesión</h2>
+                  <h2 class="text-center mb-4">Inicia sesi&oacute;n</h2>
                   <div class="form-outline mb-4">
                     <input type="text" name="usuario" id="form3Example3" class="form-control" />
                     <label class="form-label" for="form3Example3">Usuario</label>
@@ -37,24 +39,13 @@
   
                   <div class="form-outline mb-4">
                     <input type="password" name="password" id="form3Example4" class="form-control" />
-                    <label class="form-label" for="form3Example4">Contraseña</label>
+                    <label class="form-label" for="form3Example4">Contrase&ntilde;a</label>
                   </div>
-  
-                  <div class="form-check d-flex justify-content-center mb-4">
-                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-                    <label class="form-check-label" for="form2Example33">
-                      Recordarme
-                    </label>
-                  </div>
-  
+
                   <button type="submit" class="btn btn-primary btn-block mb-4">
                     Ingresar
                   </button>
                   <hr>
-                  <div class="text-center">
-                    <a href="#" class="text-decoration-none me-2">¿Olvidaste tu contraseña?</a>
-                    <a href="#" class="text-decoration-none">Crear cuenta</a>
-                  </div>
                 </form>
               </div>
             </div>
@@ -65,5 +56,29 @@
     <!-- Jumbotron -->
   </section>
   <!-- Section: Design Block -->
+  <div class="modal" tabindex="-1" id="integrantesModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Integrantes</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-center">Integrantes Redes.</p>
+          <ul class="list-unstyled">
+            <li>Samuel...</li>
+            <li>Samuel...</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  <script src="statics/app.js"></script>
+  
 </body>
 </html>
