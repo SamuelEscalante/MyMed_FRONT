@@ -48,6 +48,9 @@
             </div>
         </div>
     </nav>
+    <?php include("navbar.php") ?>
+    <div class="container">
+        <div class="row">
     <table class="table table-striped table-hover">
     <thead>
         <tr>
@@ -90,6 +93,8 @@
             }
             ?>
         </tbody>
+        </div>
+        </div>
     </table>
 
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -132,5 +137,6 @@ btn-primary">Crear Usuario</button>
             </div>
         </div>
 </body>
+
 
 </html>
