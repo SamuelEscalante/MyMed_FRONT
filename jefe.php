@@ -48,13 +48,36 @@
             </div>
         </div>
     </nav>
-    <table class="table table-bordered table-striped table-hover">
-  <thead class="thead-dark">
+    <style>
+  table {
+    border-collapse: collapse;
+    border: 2px solid #ddd;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f5f5f5;
+  }
+
+  table td:nth-child(3),
+  table td:nth-child(4) {
+    text-align: right;
+  }
+
+  thead {
+    background-color: #343a40;
+    color: #fff;
+  }
+</style>
+
+<table class="table table-striped table-hover">
+  <thead>
     <tr>
-      <th scope="col">ID_MEDICAMENTO</th>
-      <th scope="col">DESCRIPCIÓN</th>
-      <th scope="col">PRECIO UNITARIO</th>
-      <th scope="col">INVENTARIO</th>
+      <th>ID_MEDICAMENTO</th>
+      <th>DESCRIPCIÓN</th>
+      <th>PRECIO UNITARIO</th>
+      <th>INVENTARIO</th>
     </tr>
   </thead>
   <tbody>
@@ -67,7 +90,7 @@
 
       if ($response === false) {
           curl_close($curl);
-          die("Error en la conexión");
+          die("Error en la conexion");
       }
 
       curl_close($curl);
