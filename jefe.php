@@ -48,7 +48,7 @@
             </div>
         </div>
     </nav>
-    <table class="table table-striped table-hover">
+    <table class="table table-bordered table-striped table-hover">
   <thead class="thead-dark">
     <tr>
       <th scope="col">ID_MEDICAMENTO</th>
@@ -67,7 +67,7 @@
 
       if ($response === false) {
           curl_close($curl);
-          die("Error en la conexion");
+          die("Error en la conexión");
       }
 
       curl_close($curl);
@@ -91,7 +91,6 @@
     ?>
   </tbody>
 </table>
-
 
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         AGREGAR MEDICAMENTO
