@@ -32,20 +32,17 @@
     </thead>
     <tbody>
     <?php
-        $servurl="http://192.168.100.2:3003/compras";
-        $curl=curl_init($servurl);
-
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        $response=curl_exec($curl);
-       
-        if ($response===false){
+            $servurl = "http://192.168.100.2:3003/compras/$us";
+            $curl = curl_init($servurl);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            $response = curl_exec($curl);
+            if ($response === false) {
+                curl_close($curl);
+                die("Error en la conexion");
+            }
             curl_close($curl);
-            die("Error en la conexion");
-        }
-
-        curl_close($curl);
-        $resp=json_decode($response);
-        echo "<script>console.log('$servurl');</script>";
+            $resp = json_decode($response);
+            echo "<script>console.log('$servurl');</script>";
             if (is_object($resp)) {
                 $long = count((array)$resp);
                 foreach (get_object_vars($resp) as $key => $value) {
