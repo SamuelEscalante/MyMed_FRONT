@@ -24,10 +24,13 @@
             <table class="table table-striped table-hover">
     <thead>
         <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Nombre Cliente</th>
-        <th scope="col">Total Cuenta</th>
-        <th scope="col">Fecha de Compra</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">ID Medicamento</th>
+            <th scope="col">Nombre Medicamento</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio Total Med.</th>
+            <th scope="col">Total Cuenta</th>
+            <th scope="col">Fecha Compra</th>
         </tr>
     </thead>
     <tbody>
@@ -100,6 +103,7 @@
                     $compra_id = $dec->comprasId;
                     $totalCuenta = $dec->totalCuenta;
                     $fechaCompra = $dec->FechaCompra;
+                    
 
                 ?>
                     <tr>
