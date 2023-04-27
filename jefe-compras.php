@@ -45,24 +45,78 @@
 
         curl_close($curl);
         $resp=json_decode($response);
-        $long=count($resp);
-        for ($i=0; $i<$long; $i++){
-            $dec=$resp[$i];
-            $id=$dec ->id;
-            $nombreCliente=$dec->nombreCliente;
-            $totalCuenta=$dec->totalCuenta;
-            $FechaCompra=$dec->FechaCompra;
-     ?>
-    
-        <tr>
-        <td><?php echo $id; ?></td>
-        <td><?php echo $nombreCliente; ?></td>
-        <td><?php echo $totalCuenta; ?></td>
-        <td><?php echo $FechaCompra; ?></td>
-        </tr>
-     <?php 
-        }
-     ?>   
+        echo "<script>console.log('$servurl');</script>";
+            if (is_object($resp)) {
+                $long = count((array)$resp);
+                foreach (get_object_vars($resp) as $key => $value) {
+                    $long = count($value->record);
+                    
+                    for ($i = 0; $i < $long; $i++) {
+                        $dec = $value->record[$i];
+                        $id = $dec->id;
+                        $usuario = $dec->usuario;
+                        $medicamento_nombre = $dec->medicamentoNombre;
+                        $cantidad = $dec->cantidad;
+                        $precio_total = $dec->precioTotal;
+                        $medicamento_id = $dec->medicamentoId;
+                        $compra_id = $dec->comprasId;
+                        $totalCuenta = $dec->totalCuenta;
+                        $fechaCompra = $dec->FechaCompra;
+                        if ($i == 0) {
+                            ?>
+                                <tr>
+                                    <td rowspan="<?php echo $value->len; ?>"><?php echo $usuario; ?></td>
+                                    <td><?php echo $medicamento_id; ?></td>
+                                    <td><?php echo $medicamento_nombre; ?></td>
+                                    <td>#<?php echo $cantidad; ?></td>
+                                    <td>$<?php echo $precio_total; ?></td>
+                                    <td rowspan="<?php echo $value->len; ?>"><?php echo $totalCuenta; ?></td>
+                                    <td rowspan="<?php echo $value->len; ?>"><?php echo $fechaCompra; ?></td>
+                                </tr>
+                            <?php
+                        } else {
+                            ?>
+                                <tr>
+                                    <td><?php echo $medicamento_id; ?></td>
+                                    <td><?php echo $medicamento_nombre; ?></td>
+                                    <td>#<?php echo $cantidad; ?></td>
+                                    <td>$<?php echo $precio_total; ?></td>
+                                </tr>
+                            <?php
+
+                        }
+                    }
+                }
+            }
+            if (is_object($resp)) {
+                $long = count($resp);
+                echo $long;
+                echo "-----";
+                for ($i = 0; $i < $long; $i++) {
+                    $dec = $resp[$i];
+                    $id = $dec->id;
+                    $usuario = $dec->usuario;
+                    $medicamento_nombre = $dec->medicamentoNombre;
+                    $cantidad = $dec->cantidad;
+                    $precio_total = $dec->precioTotal;
+                    $medicamento_id = $dec->medicamentoId;
+                    $compra_id = $dec->comprasId;
+                    $totalCuenta = $dec->totalCuenta;
+                    $fechaCompra = $dec->FechaCompra;
+
+                ?>
+                    <tr>
+                        <td><?php echo $usuario; ?></td>
+                        <td><?php echo $medicamento_id; ?></td>
+                        <td><?php echo $medicamento_nombre; ?></td>
+                        <td>#<?php echo $cantidad; ?></td>
+                        <td>$<?php echo $precio_total; ?></td>
+                        <td>$<?php echo $totalCuenta; ?></td>
+                        <td><?php echo $fechaCompra; ?></td>
+                    </tr>
+                <?php
+            }}
+            ?>  
     </tbody>
     </table>
         </div>

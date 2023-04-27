@@ -56,7 +56,6 @@ navigation">
             if (is_object($resp)) {
                 $long = count((array)$resp);
                 foreach (get_object_vars($resp) as $key => $value) {
-                    echo "-----a-";
                     $long = count($value->record);
                     
                     for ($i = 0; $i < $long; $i++) {
