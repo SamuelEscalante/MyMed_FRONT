@@ -43,7 +43,9 @@ navigation">
     <div class="container mt-4">
         <h1>Bienvenido a YOU MED</h1>
         <p>Seleccione una opción en la barra de navegación para
-            comenzar.</p>
-        <img src="https://i0.wp.com/pymesenlaweb.com/wp-content/uploads/2019/12/consulta-gratis-scaled.jpg?resize=1024%2C443&ssl=1" style="width: 300px; height: 300px;">
+	    comenzar.</p>
+<div class="text-center">
+        <img src="https://i0.wp.com/pymesenlaweb.com/wp-content/uploads/2019/12/consulta-gratis-scaled.jpg?resize=1024%2C443&ssl=1" style="width: 900px; height: 300px;">
     </div>
+ </div>
 </body>
