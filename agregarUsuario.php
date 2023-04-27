@@ -48,15 +48,15 @@
             </div>
         </div>
     </nav>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Usuario</th>
-                <th scope="col">Password</th>
-                <th scope="col">Rol</th>
-            </tr>
-        </thead>
+    <table class="table table-striped table-hover">
+    <thead>
+        <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Usuario</th>
+        <th scope="col">Password</th>
+        <th scope="col">Rol</th>
+        </tr>
+    </thead>
         <tbody>
             <?php
             $servurl = "http://192.168.100.2:3001/usuarios";
