@@ -49,14 +49,17 @@
         </div>
     </nav>
     <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">ID_MEDICAMENTO</th>
-                <th scope="col">DESCRIPCION</th>
-                <th scope="col">PRECIO_UNITARIO</th>
-                <th scope="col">INVENTARIO</th>
-            </tr>
-        </thead>
+    <div class="container">
+        <div class="row">
+    <table class="table table-striped table-hover">
+    <thead>
+        <tr>
+        <th scope="col">ID_MEDICAMENTO</th>
+        <th scope="col">DESCRIPCION</th>
+        <th scope="col">PRECIO UNITARIO</th>
+        <th scope="col">INVENTARIO</th>
+        </tr>
+    </thead>
         <tbody>
             <?php
             $servurl = "http://192.168.100.2:3002/medicamentos";
@@ -90,6 +93,8 @@
             }
             ?>
         </tbody>
+        </div>
+        </div>
     </table>
 
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">

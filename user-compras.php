@@ -42,14 +42,15 @@ navigation">
     </nav>
     <form method="post" action="procesar.php"> 
     <table class="table">
+    <div class="container">
+        <div class="row">
+    <table class="table table-striped table-hover">
     <thead>
         <tr>
-        
         <th scope="col">Nombre</th>
         <th scope="col">Precio</th>
         <th scope="col">Inventario</th>
         <th scope="col">Cantidad</th>
-
         </tr>
     </thead>
     <tbody>
@@ -88,6 +89,8 @@ navigation">
      
      
     </tbody>
+        </div>
+        </div>
     </table>
     <input type="hidden" name="usuario" value=<?php echo $us; ?>>
     <input type="submit" value="Agregar a la orden">

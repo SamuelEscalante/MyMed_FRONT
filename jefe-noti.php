@@ -48,12 +48,14 @@
             </div>
         </div>
     </nav>
-    <table class="table">
+    <div class="container">
+        <div class="row">
+    <table class="table table-striped table-hover">
     <thead>
         <tr>
         <th scope="col">ID</th>
-	<th scope="col">INFORMACION</th>
-	<th scope="col">FECHA DE CREACIÓN DE NOTIFICACION</th>
+        <th scope="col">INFORMACIÓN MEDICAMENTO</th>
+        <th scope="col">FECHA DE NOTIFICACIÓN</th>
         </tr>
     </thead>
     <tbody>
@@ -90,6 +92,8 @@
         }
      ?>   
     </tbody>
+    </div>
+    </div>
     </table>
 
 </body>

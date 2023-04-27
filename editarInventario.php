@@ -48,14 +48,15 @@
             </div>
         </div>
     </nav>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">ID del Medicamento</th>
-                <th scope="col">Nuevo Inventario</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="container">
+        <div class="row">
+    <table class="table table-striped table-hover">
+    <thead>
+        <tr>
+        <th scope="col">Id_Medicamento</th>
+        <th scope="col">Nuevo Inventario</th>
+        </tr>
+    </thead>
             <?php
             $servurl = "http://192.168.100.2:3002/medicamentos";
             $curl = curl_init($servurl);
@@ -86,6 +87,8 @@
             }
             ?>
         </tbody>
+        </div>
+        </div>
     </table>
 
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">

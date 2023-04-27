@@ -39,17 +39,7 @@ navigation">
     </nav>
         <table class="table">
         <thead>
-            <tr>
-                <th scope="col">Usuario</th>
-                <th scope="col">ID Medicamento</th>
-                <th scope="col">Medicamento</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Precio Total</th>
-                <th scope="col">Total de Compra</th>
-                <th scope="col">Fecha de Compra</th>
 
-            </tr>
-        </thead>
         <tbody>
             <?php
             $servurl = "http://192.168.100.2:3003/compras/$us";
