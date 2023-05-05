@@ -18,10 +18,61 @@
         header("Location: index.html");
     }
     ?>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<style>
+  /* Estilos para la imagen */
+  .jumbotron img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Estilos para el navbar */
+  .navbar {
+    background-color: #fff;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-right: 1.5rem;
+  }
+
+  .navbar-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  /* Estilos para el contenido */
+  .container {
+    max-width: 900px;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #555;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.html">YOU MED</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle
+navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
@@ -40,12 +91,13 @@
   </div>
 </nav>
 
-<div class="container mt-4">
-  <h1 style="text-align:center; font-weight:bold; font-size:40px;">Bienvenido a YOU MED</h1>
-  <p style="text-align:center; font-size:20px;">Seleccione una opción en la barra de navegación para comenzar.</p>
-  <div class="d-flex justify-content-center mt-4">
-    <img src="https://i0.wp.com/pymesenlaweb.com/wp-content/uploads/2019/12/consulta-gratis-scaled.jpg?resize=1024%2C443&ssl=1" style="max-width: 100%; height: auto;">
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Bienvenido a YOU MED</h1>
+    <p class="lead">Seleccione una opción en la barra de navegación para comenzar.</p>
   </div>
+  <img src="https://i0.wp.com/pymesenlaweb.com/wp-content/uploads/2019/12/consulta-gratis-scaled.jpg?resize=1024%2C443&ssl=1" alt="">
+</div>
 </div>
  </div>
 </body>
