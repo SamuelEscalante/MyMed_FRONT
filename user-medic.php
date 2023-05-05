@@ -37,71 +37,71 @@ navigation">
             </div>
         </div>
     </nav>
-    <table class="table">
-    <thead>
-        <tr>
-            <th>Usuario</th>
-            <th>Medicamento ID</th>
-            <th>Medicamento Nombre</th>
-            <th>Cantidad</th>
-            <th>Precio Total</th>
-            <th>Total de la Cuenta</th>
-            <th>Fecha de Compra</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php
-            $servurl = "http://192.168.100.2:3003/compras/$us";
-            $curl = curl_init($servurl);
-            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-            $response = curl_exec($curl);
-            if ($response === false) {
-                curl_close($curl);
-                die("Error en la conexión");
-            }
+    <table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>Usuario</th>
+      <th>Medicamento ID</th>
+      <th>Medicamento Nombre</th>
+      <th>Cantidad</th>
+      <th>Precio Total</th>
+      <th>Total de la Cuenta</th>
+      <th>Fecha de Compra</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php
+        $servurl = "http://192.168.100.2:3003/compras/$us";
+        $curl = curl_init($servurl);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($curl);
+        if ($response === false) {
             curl_close($curl);
-            $resp = json_decode($response);
-            if (is_object($resp)) {
-                foreach (get_object_vars($resp) as $key => $value) {
-                    $long = count($value->record);
-                    for ($i = 0; $i < $long; $i++) {
-                        $dec = $value->record[$i];
-                        $id = $dec->id;
-                        $usuario = $dec->usuario;
-                        $medicamento_nombre = $dec->medicamentoNombre;
-                        $cantidad = $dec->cantidad;
-                        $precio_total = $dec->precioTotal;
-                        $medicamento_id = $dec->medicamentoId;
-                        $compra_id = $dec->comprasId;
-                        $totalCuenta = $dec->totalCuenta;
-                        $fechaCompra = $dec->FechaCompra;
-                        if ($i == 0) {
-                            ?>
-                            <tr>
-                                <td rowspan="<?php echo $value->len; ?>"><?php echo $usuario; ?></td>
-                                <td><?php echo $medicamento_id; ?></td>
-                                <td><?php echo $medicamento_nombre; ?></td>
-                                <td>#<?php echo $cantidad; ?></td>
-                                <td>$<?php echo $precio_total; ?></td>
-                                <td rowspan="<?php echo $value->len; ?>"><?php echo $totalCuenta; ?></td>
-                                <td rowspan="<?php echo $value->len; ?>"><?php echo $fechaCompra; ?></td>
-                            </tr>
-                        <?php
-                        } else {
-                            ?>
-                            <tr>
-                                <td><?php echo $medicamento_id; ?></td>
-                                <td><?php echo $medicamento_nombre; ?></td>
-                                <td>#<?php echo $cantidad; ?></td>
-                                <td>$<?php echo $precio_total; ?></td>
-                            </tr>
-                        <?php
-                        }
+            die("Error en la conexión");
+        }
+        curl_close($curl);
+        $resp = json_decode($response);
+        if (is_object($resp)) {
+            foreach (get_object_vars($resp) as $key => $value) {
+                $long = count($value->record);
+                for ($i = 0; $i < $long; $i++) {
+                    $dec = $value->record[$i];
+                    $id = $dec->id;
+                    $usuario = $dec->usuario;
+                    $medicamento_nombre = $dec->medicamentoNombre;
+                    $cantidad = $dec->cantidad;
+                    $precio_total = $dec->precioTotal;
+                    $medicamento_id = $dec->medicamentoId;
+                    $compra_id = $dec->comprasId;
+                    $totalCuenta = $dec->totalCuenta;
+                    $fechaCompra = $dec->FechaCompra;
+                    if ($i == 0) {
+                        ?>
+                        <tr>
+                            <td rowspan="<?php echo $value->len; ?>"><?php echo $usuario; ?></td>
+                            <td><?php echo $medicamento_id; ?></td>
+                            <td><?php echo $medicamento_nombre; ?></td>
+                            <td>#<?php echo $cantidad; ?></td>
+                            <td>$<?php echo $precio_total; ?></td>
+                            <td rowspan="<?php echo $value->len; ?>"><?php echo $totalCuenta; ?></td>
+                            <td rowspan="<?php echo $value->len; ?>"><?php echo $fechaCompra; ?></td>
+                        </tr>
+                    <?php
+                    } else {
+                        ?>
+                        <tr>
+                            <td><?php echo $medicamento_id; ?></td>
+                            <td><?php echo $medicamento_nombre; ?></td>
+                            <td>#<?php echo $cantidad; ?></td>
+                            <td>$<?php echo $precio_total; ?></td>
+                        </tr>
+                    <?php
                     }
                 }
             }
-        ?>
-    </tbody>
+        }
+    ?>
+  </tbody>
 </table>
 
 </body>
