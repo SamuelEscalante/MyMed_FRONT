@@ -40,60 +40,63 @@ navigation">
             </div>
         </div>
     </nav>
-    <form method="post" action="procesar.php"> 
-    <table class="table">
-    <div class="container">
-        <div class="row">
-    <table class="table table-striped table-hover">
-    <thead>
-        <tr>
-        <th scope="col">Nombre</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Inventario</th>
-        <th scope="col">Cantidad</th>
-        </tr>
-    </thead>
-    <tbody>
-    <?php
-        $servurl="http://192.168.100.2:3002/medicamentos";
-        $curl=curl_init($servurl);
-
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        $response=curl_exec($curl);
-       
-        if ($response===false){
-            curl_close($curl);
-            die("Error en la conexion");
-        }
-
-        curl_close($curl);
-        $resp=json_decode($response);
-        $long=count($resp);
-        //echo '<form method="post" action="procesar.php">';
-        for ($i=0; $i<$long; $i++){
-            $dec=$resp[$i];
-            $ID_MEDICAMENTO=$dec ->ID_MEDICAMENTO;
-            $DESCRIPCION=$dec->DESCRIPCION;
-            $PRECIO_UNITARIO=$dec->PRECIO_UNITARIO;
-            $INVENTARIO=$dec->INVENTARIO;
-     ?>
-    
-        <tr>
-        
-        <td><?php echo $ID_MEDICAMENTO; ?></td>
-        <td><?php echo $DESCRIPCION; ?></td>
-        <td><?php echo $INVENTARIO; ?></td>
-        <td><?php echo '<input type="number" name="cantidad['.$ID_MEDICAMENTO.']" value="0" min="0">';?></td>
-        </tr>
-     <?php  } ?>  
-     
-     
-    </tbody>
+    <form method="post" action="procesar.php">
+  <div class="container mt-5">
+    <h1 class="text-center">Lista de Medicamentos</h1>
+    <div class="row mt-4">
+      <div class="col-12">
+        <div class="table-responsive">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Inventario</th>
+                <th scope="col">Cantidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+                $servurl = "http://192.168.100.2:3002/medicamentos";
+                $curl = curl_init($servurl);
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                $response = curl_exec($curl);
+                if ($response === false) {
+                  curl_close($curl);
+                  die("Error en la conexión");
+                }
+                curl_close($curl);
+                $resp = json_decode($response);
+                $long = count($resp);
+                for ($i = 0; $i < $long; $i++) {
+                  $dec = $resp[$i];
+                  $ID_MEDICAMENTO = $dec->ID_MEDICAMENTO;
+                  $DESCRIPCION = $dec->DESCRIPCION;
+                  $PRECIO_UNITARIO = $dec->PRECIO_UNITARIO;
+                  $INVENTARIO = $dec->INVENTARIO;
+              ?>
+              <tr>
+                <td><?php echo $DESCRIPCION; ?></td>
+                <td><?php echo "$" . number_format($PRECIO_UNITARIO, 2); ?></td>
+                <td><?php echo $INVENTARIO; ?></td>
+                <td>
+                  <div class="form-group mb-0">
+                    <input type="number" name="cantidad[<?php echo $ID_MEDICAMENTO; ?>]" class="form-control" value="0" min="0">
+                  </div>
+                </td>
+              </tr>
+              <?php } ?>
+            </tbody>
+          </table>
         </div>
-        </div>
-    </table>
-    <input type="hidden" name="usuario" value=<?php echo $us; ?>>
-    <input type="submit" value="Agregar a la orden">
-    </form>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-primary">Agregar al Carrito</button>
+      </div>
+    </div>
+  </div>
+</form>
     </body>
 </html>
