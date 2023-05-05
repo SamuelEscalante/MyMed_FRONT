@@ -41,6 +41,7 @@ navigation">
         </div>
     </nav>
     <form method="post" action="procesar.php">
+      <input type="hidden" name="usuario" value="<?php echo $us; ?>">
   <div class="container mt-5">
     <h1 class="text-center">Lista de Medicamentos</h1>
     <div class="row mt-4">

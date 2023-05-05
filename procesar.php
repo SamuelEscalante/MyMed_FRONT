@@ -1,5 +1,5 @@
 <?php
-$usuario = $_SESSION['usuario'];
+$usuario = $_POST['usuario'];
 
 $items = array();
 
