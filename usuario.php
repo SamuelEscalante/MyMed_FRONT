@@ -24,7 +24,6 @@
     width: 70%;
     height: 500px;
     object-fit: cover;
-    text-align: center;
   }
 
   /* Estilos para el navbar */
@@ -66,6 +65,9 @@
     font-size: 1.5rem;
     margin-bottom: 2rem;
     color: #555;
+  }
+  .jumbotron {
+    text-align: center;
   }
 </style>
 
