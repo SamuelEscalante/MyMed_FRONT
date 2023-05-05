@@ -18,7 +18,7 @@
         header("Location: index.html");
     }
     ?>
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="jefe.php">MY MED</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,6 +52,47 @@
     </div>
   </div>
 </nav>
+
+<!-- CSS -->
+<style>
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 24px;
+  }
+  
+  .navbar-nav .nav-link {
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    padding: 10px 15px;
+  }
+  
+  .navbar-nav .nav-link.active {
+    background-color: #ddd;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    background-color: #eee;
+  }
+  
+  .navbar-nav:last-child .nav-link {
+    margin-left: auto;
+  }
+  
+  .navbar-text a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 1px solid #333;
+    border-radius: 4px;
+  }
+  
+  .navbar-text a:hover {
+    background-color: #333;
+    color: #fff;
+  }
+</style>
     <style>
   table {
     border-collapse: collapse;
