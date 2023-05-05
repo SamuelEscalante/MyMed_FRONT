@@ -24,6 +24,7 @@
     width: 70%;
     height: 500px;
     object-fit: cover;
+    text-align: center;
   }
 
   /* Estilos para el navbar */
