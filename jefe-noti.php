@@ -19,35 +19,80 @@
     }
     ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="jefe.php">MY MED</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="jefe.php">Inventario de Medicamentos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="editarInventario.php">Editar Medicamento</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="agregarUsuario.php">Agregar Nuevo Usuario</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="jefe-compras.php">Compras</a>
-		    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="jefe-noti.php">Notificación Medicamentos</a>
-                    </li>
-                </ul>
-                <span class="navbar-text">
-                    <?php echo "<a class='nav-link' href='logout.php'>Logout $us</a>"; ?>
-                </span>
-            </div>
-        </div>
-    </nav>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="jefe.php">MY MED</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="jefe.php">Inventario de Medicamentos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="editarInventario.php">Editar Medicamento</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="agregarUsuario.php">Agregar Nuevo Usuario</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="jefe-compras.php">Compras</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="jefe-noti.php">Notificación de Medicamentos</a>
+        </li>
+      </ul>
+      
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="logout.php">Logout <?php echo $us; ?></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- CSS -->
+<style>
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 24px;
+  }
+  
+  .navbar-nav .nav-link {
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    padding: 10px 15px;
+  }
+  
+  .navbar-nav .nav-link.active {
+    background-color: #ddd;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    background-color: #eee;
+  }
+  
+  .navbar-nav:last-child .nav-link {
+    margin-left: auto;
+  }
+  
+  .navbar-text a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 1px solid #333;
+    border-radius: 4px;
+  }
+  
+  .navbar-text a:hover {
+    background-color: #333;
+    color: #fff;
+  }
+</style>
     <div class="container">
         <div class="row">
     <table class="table table-striped table-hover">
