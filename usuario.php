@@ -21,8 +21,8 @@
 <style>
   /* Estilos para la imagen */
   .jumbotron img {
-    width: 100%;
-    height: auto;
+    width: 70%;
+    height: 500px;
     object-fit: cover;
   }
 
